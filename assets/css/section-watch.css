@@ -1,0 +1,37 @@
+.section-watch {
+	background: url('../img/world_map.png') center no-repeat;
+	background-size: cover;
+}
+
+.section-watch h3,
+.section-watch h4 {
+	color: #484848;
+}
+
+.section-tabs .nav-pills {
+	margin-bottom: 20px;
+}
+
+.section-tabs .nav-pills .nav-link {
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding: 14px 30px;
+	color: #484848;
+}
+
+.section-tabs .nav-pills .nav-link.active {
+	background: #f42267;
+	color: #fff;
+	box-shadow: 0 4px 16px rgba(0,0,0,.35);
+}
+
+@media only screen and (max-width: 480px) {
+	.section-tabs .nav-pills .nav-link {
+		padding: 8px 16px;
+	}
+
+	.section-tabs .nav-pills .nav-item {
+		width: 100%;
+	}
+}

@@ -1,0 +1,46 @@
+.section-form {
+    background: url(../img/form_bg.jpg) center no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.section-form h5 {
+    font-style: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section-form form {
+    margin-top: 50px;
+}
+
+.section-form .btn-vialet {
+    background-color: #4b2d7f;
+}
+
+.section-form .btn-violet.btn-shadow {
+    box-shadow: 0 7px 0px #a57ee9;
+}
+
+.section-form .btn-violet.btn-shadow:hover {
+    background: #3a2362;
+    box-shadow: 0 5px 0 #a57ee9;
+}
+
+.section-form .form-control {
+    height: 51px;
+    background-color: rgba(255, 255, 255, .35);
+    color: #fff;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 20px;
+}
+
+.section-form .form-control::placeholder {
+    color: #ffffff;
+}
+
+.section-form .form-control:focus {
+    box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
+}

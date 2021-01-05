@@ -1,0 +1,14 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1001;
+    background-color: #fefefe;
+}
+
+.preloader .spinner-border {
+    height: 10rem;
+    width: 10rem;
+}

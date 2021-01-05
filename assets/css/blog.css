@@ -1,0 +1,99 @@
+.main-content {
+    padding: 40px 0;
+}
+
+.article-preview {
+    border: 1px solid #ccc;
+    padding: 20px;
+    padding-bottom: 40px;
+    transition: all .5s;
+    margin-bottom: 40px;
+}
+
+.article-preview:hover {
+    box-shadow: 0 14px 30px -15px rgba(0, 0, 0, .75);
+}
+
+.article-preview h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.article-preview a {
+    color: #484848;
+    transition: all .5s;
+}
+
+.article-preview a:hover {
+    color: #f42267;
+    text-decoration: none;
+}
+
+.article-preview .article-date {
+    color: #da1757;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.article-preview .thumb {
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    margin: 0 20px 20px 0;
+    float: left;
+}
+
+.article-preview .more {
+    color: #da1757;
+}
+
+.article-preview .more:hover {
+    text-decoration: underline;
+}
+
+.widget-title {
+    color: #484848;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.sidebar-widget .list-group-item.active {
+    background-color: #da1757;
+    border-color: #da1757;
+}
+
+.sidebar-widget .list-group-item:hover {
+    background-color: #da1757;
+    color: #fff;
+    border-color: #f42267;
+}
+
+.widget-title::after {
+    content: "";
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 30px;
+    background-color: #da1757;
+}
+
+.pagination .page-link {
+    color: #da1757;
+    transition: all .5s;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.pagination .page-link:hover {
+    background-color: #da1757;
+    color: #fff;
+    border-color: #f42267;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #da1757;
+    border-color: #da1757;
+}

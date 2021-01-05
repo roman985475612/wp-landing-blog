@@ -1,0 +1,19 @@
+.section-work {
+    background-color: #f1f1f1;
+}
+
+.section-work .nav-pills {
+    margin: 30px 0;
+}
+
+.section-work .gallery-item {
+    margin-bottom: 20px;
+}
+
+.section-work .gallery-item a img {
+    transition: all .5s;
+}
+
+.section-work .gallery-item a:hover img {
+    box-shadow: 0 14px 30px -15px rgba(0, 0, 0, .75);
+}

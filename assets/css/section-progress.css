@@ -1,0 +1,32 @@
+.section-progress {
+	background-color: #4b2d7f;
+	color: #fff;
+	font-size: 1rem;
+	padding: 0;
+}
+
+.section-progress i {
+	font-size: 4rem;
+}
+
+.section-progress .num {
+	font-size: 3rem;
+	font-weight: 600;
+	margin: 30px 0 20px;
+}
+
+.section-progress h4 {
+	font-size: 2rem;
+	height: 72px;
+	overflow: hidden;
+}
+
+.section-progress .progress-item {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	transition: all .5s;
+}
+
+.section-progress .progress-item:hover {
+	background-color: #40286a;
+}

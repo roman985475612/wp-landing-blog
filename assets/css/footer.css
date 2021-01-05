@@ -1,0 +1,72 @@
+.footer {
+    background: url(../img/world_map.png) center no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer h5 {
+    font-style: 25px;
+    color: #4b2d7f;
+    font-weight: 700;
+}
+
+.footer ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.footer ul a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #171717;
+}
+
+.footer ul a:hover {
+    text-decoration: underline;
+}
+
+.footer .footer-images img {
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.copyright {
+    background-color: #f6f6f6;
+    padding: 50px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.copyright a,
+.copyright span {
+    color: #171717;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+.copyright a::after,
+.copyright span::after {
+    content: '\00B7';
+    position: absolute;
+    right: -3px;
+}
+
+.copyright li:last-child a::after {
+    content: '';
+}
+
+@media only screen and (max-width: 992px) {
+    .footer{
+        padding: 50px 0;
+    }
+
+    .copyright {
+        padding: 25px 0;
+    }
+}

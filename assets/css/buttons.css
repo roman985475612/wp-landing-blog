@@ -1,0 +1,26 @@
+.btn {
+	font-size: 1rem;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.btn-pink {
+	background-color: #f42267;
+}
+
+.btn-violet {
+	background-color: #69328e;
+}
+
+.btn-shadow {
+	box-shadow: 0 10px 0 #ff5990;
+	border-radius: 10px;
+	padding: 10px 25px;
+	transition: all .5s;
+}
+
+.btn-shadow:hover {
+	background-color: #da1757;
+	box-shadow: 0 5px 0 #ff5990;
+}

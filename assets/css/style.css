@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+@import url('/css/buttons.css');
+@import url('/css/header.css');
+@import url('/css/section-watch.css');
+@import url('/css/section-progress.css');
+@import url('/css/section-lets.css');
+@import url('/css/section-design.css');
+@import url('/css/section-work.css');
+@import url('/css/section-reviews.css');
+@import url('/css/section-form.css');
+@import url('/css/footer.css');
+@import url('/css/blog.css');
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #1d1d1d;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+section {
+	padding: 100px 0;
+}
+
+h3 {
+	font-family: 'Noto Serif', serif;
+	font-style: italic;
+	font-size: 2.3rem;
+}
+
+h4 {
+	font-weight: 600;
+	font-size: 2.8rem;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
+
+.scroll-to-top {
+	position: fixed;
+	bottom: 60px;
+	right: 50px;
+	border-radius: 4px;
+	font-size: 32px;
+	display: none;
+	height: 50px;
+	width: 50px;
+	z-index: 1001;
+	color: #ffffff;
+	transition: all .5s;
+	background-color: #da1757;
+	border: 1px solid #da1757;
+	cursor: pointer;
+}
+
+.scroll-to-top:hover {
+	background: #fff;
+	text-decoration: none;
+	outline: none;
+	color: #da1757;
+}

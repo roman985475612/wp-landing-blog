@@ -1,0 +1,24 @@
+.section-design h2,
+.section-design h3,
+.section-design h4 {
+  color: #484848;
+}
+
+.section-design h2 {
+  margin: 10px 0;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.section-design h3 {
+  font-size: 2em;
+}
+
+.section-design p {
+  font-size: 1em;
+}
+
+.section-design span {
+  font-size: 3.8em;
+  color: #f42267;
+}
