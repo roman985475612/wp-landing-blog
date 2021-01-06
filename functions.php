@@ -48,11 +48,9 @@ if ( ! function_exists( 'bluerex_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary', 'bluerex' ),
-			)
-		);
+		register_nav_menus([
+            'header_menu' => esc_html__( 'Header menu', 'bluerex' ),
+        ]);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -204,3 +202,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Custom code
+function bluerex_dd($data) {
+    echo '<pre style="font-size: .4em; ">' . print_r($data, true) . '</pre>';
+    die;
+}

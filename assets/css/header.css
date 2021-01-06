@@ -27,8 +27,14 @@
 	transition: all .3s;
 }
 
-.main-header a:hover::after {
+.navbar-nav a:hover::after {
 	transform: scale(1);
+}
+
+.navbar-nav a {
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
 }
 
 .main-header-text {

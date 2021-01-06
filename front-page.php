@@ -22,12 +22,26 @@
   <header class="main-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">BlueRex</a>
+        <a class="navbar-brand" href="<?= home_url() ?>">
+            <?php $custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) ); ?>
+            <?php if ($custom_logo): ?>
+                <img 
+                    src="<?= $custom_logo[0] ?>"
+                    alt="<?php bloginfo( 'name' ) ?>"
+                >
+            <?php endif ?>
+            <?php bloginfo( 'name' ) ?>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav">
+            <?php wp_nav_menu([
+                'theme_location' => 'header_menu',
+                'container'      => false,
+                'menu_class'     => 'navbar-nav',
+            ]) ?>
+          <!--ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
@@ -52,7 +66,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Content</a>
             </li>
-          </ul>
+          </ul-->
         </div>
       </div>
     </nav>
