@@ -4,13 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Hello, world!</title>
-  
   <?php wp_head() ?>
   
 </head>
 <body>
-
   <!--div class="preloader d-flex justify-content-center align-items-center">
     <div class="spinner-border text-info" role="status">
       <span class="visually-hidden">Loading...</span>

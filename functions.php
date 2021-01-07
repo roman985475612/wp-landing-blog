@@ -207,3 +207,24 @@ function bluerex_dd($data) {
     echo '<pre style="font-size: .4em; ">' . print_r($data, true) . '</pre>';
     die;
 }
+
+function bluerex_helper($tagName, $content) {
+    return "<$tagName>" . $content . "</$tagName>";
+}
+
+function bluerex_show_field($tagName, $fieldName) {
+    if ( $field = get_field( $fieldName ) ) {
+        echo bluerex_helper($tagName, $field);
+    }
+}
+
+function bluerex_get_background($field, $category = null, $cover = true) {
+    $style = null;
+    if ( $backgroundUrl = get_field($field, $category) ) {
+        $add_style = $cover ? ' background-size: cover': '';
+        $style = <<<EOT
+ style="background: url($backgroundUrl) center no-repeat;$add_style"
+EOT;
+    }
+    return $style;
+}
