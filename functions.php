@@ -200,21 +200,29 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
-}
 
+}
 // Custom code
 function bluerex_dd($data) {
-    echo '<pre style="font-size: .4em; ">' . print_r($data, true) . '</pre>';
+    echo '<pre style="font-size: 16px; ">' . print_r($data, true) . '</pre>';
     die;
 }
 
 function bluerex_helper($tagName, $content) {
-    return "<$tagName>" . $content . "</$tagName>";
+    return <<<EOT
+<$tagName>$content</$tagName>    
+EOT;
 }
 
-function bluerex_show_field($tagName, $fieldName) {
-    if ( $field = get_field( $fieldName ) ) {
+function bluerex_show_field($tagName, $fieldName, $category = null) {
+    if ( $field = get_field( $fieldName, $category ) ) {
         echo bluerex_helper($tagName, $field);
+    }
+}
+
+function bluerex_show_img($tagName, $fieldName, $category = null) {
+    if ( $field = get_field( $fieldName, $category ) ) {
+        echo '<img src="'.$field.'">';  
     }
 }
 
