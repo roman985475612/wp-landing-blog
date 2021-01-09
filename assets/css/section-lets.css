@@ -1,5 +1,4 @@
 .section-lets {
-	background: url('../img/letsgrow.jpg') center no-repeat;
-	background-size: cover;
+    background: linear-gradient(45deg, #1a4647 0%,#2989d8 50%,#207cca 51%,#b68773 100%);
 	color: #fff;
 }

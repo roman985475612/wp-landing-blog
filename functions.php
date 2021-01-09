@@ -220,6 +220,12 @@ function bluerex_show_field($tagName, $fieldName, $category = null) {
     }
 }
 
+function bluerex_get_field($selector, $post_id = null) {
+    if ( $value = get_field( $selector, $post_id ) ) {
+        return $value;
+    }
+}
+
 function bluerex_show_img($tagName, $fieldName, $category = null) {
     if ( $field = get_field( $fieldName, $category ) ) {
         echo '<img src="'.$field.'">';  

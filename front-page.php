@@ -78,44 +78,50 @@ if ($design_cat):
 </section>
 <?php endif ?>
 
-<section class="section-progress text-center">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 progress-item">
-      <div><i class="fas fa-bullhorn"></i></div>
-      <div class="num">500+</div>
-      <h4><span>Superfully</span> complated projects</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ea repellendus, laudantium. Voluptates culpa placeat rem, error, quos totam. Eum?</p>
-    </div>
-    <div class="col-lg-4 progress-item">
-      <div><i class="fas fa-bullhorn"></i></div>
-      <div class="num">254+</div>
-      <h4><span>Highly</span> specialised employees</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ea repellendus, laudantium. Voluptates culpa placeat rem, error, quos totam. Eum?</p>
-    </div>
-    <div class="col-lg-4 progress-item">
-      <div><i class="fas fa-bullhorn"></i></div>
-      <div class="num">45+</div>
-      <h4><span>Awards</span> around the world</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ea repellendus, laudantium. Voluptates culpa placeat rem, error, quos totam. Eum?</p>
-    </div>
-      
-  </div>
-</div>
-</section>
+<?php
+    $tag_ID = 8;
+    $category = get_category($tag_ID);
+    
+    if ($category):
+        $posts = get_posts([
+            'numberposts' => 3,
+            'category'    => $tag_ID,
+        ]);
+?>
+    <section class="section-progress text-center">
+        <div class="container">
+            <div class="row">
+                <?php foreach ($posts as $post): ?>
+                    <div class="col-lg-4 progress-item">
+                        <div><i class="<?= bluerex_get_field( 'progress_icon', $post->ID ) ?>"></i></div>
+                        <div class="num"><?= bluerex_get_field( 'progress_count', $post->ID ) ?></div>
+                        <h4><?= $post->post_title ?></h4>
+                        <p><?= $post->post_content ?></p>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </section>
+<?php endif; unset($category) ?>
 
-<section class="section-lets text-center">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Let's Grow Together</h3>
-      <h4>We turn creative ideas into your bussines</h4>
-      <p class="px-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe asperiores commodi enim et cumque consequuntur delectus numquam fuga cum, dicta officiis excepturi architecto aspernatur quisquam consectetur laudantium voluptates minus maiores!</p>
-      <p><a href="#" class="btn btn-pink btn-shadow">Read more</a></p>
-    </div>
-  </div>
-</div>
-</section>
+<?php
+    $tag_ID = 9;
+    $category = get_category($tag_ID);
+    if ($category):
+?>
+    <section class="section-lets text-center" <?= bluerex_get_background('section_bg_image', $category) ?>>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3><?= $category->name ?></h3>
+                    <h4><?= bluerex_get_field( 'section_header', $category ) ?></h4>
+                    <p class="px-5"><?= $category->description ?></p>
+                    <p><a href="<?= get_category_link($tag_ID) ?>" class="btn btn-pink btn-shadow"><?= __( 'Read more', 'bluerex' ) ?></a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; unset($category) ?>
 
 <section class="section-design">
 <div class="container">
