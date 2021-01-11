@@ -10,10 +10,10 @@
     margin-bottom: 20px;
 }
 
-.section-work .gallery-item a img {
+.section-work .wp-block-gallery a img {
     transition: all .5s;
 }
 
-.section-work .gallery-item a:hover img {
+.section-work .wp-block-gallery a:hover img {
     box-shadow: 0 14px 30px -15px rgba(0, 0, 0, .75);
 }

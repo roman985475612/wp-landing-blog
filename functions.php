@@ -242,3 +242,14 @@ EOT;
     }
     return $style;
 }
+
+function bluerex_get_youtube_url( $url ) {
+    $embed_url = '';
+    $cnt = 0;
+    $embed_url = str_replace('watch?v=', 'embed/', $url, $cnt);
+    if ($cnt == 0) {
+        $embed_url = str_replace('youtu.be/', 'youtube.com/embed/', $url);
+    }
+    
+    return $embed_url;
+}

@@ -6,7 +6,7 @@ $(function() {
         })
     })
     
-    baguetteBox.run('.gallery');
+    baguetteBox.run('.wp-block-gallery');
 
     // scroll to top
     var scrollToTop = $('#scrollToTop')
