@@ -202,7 +202,32 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 
 }
+
+add_action( 'init', 'bluerex_reviews' );
+function bluerex_reviews() {
+    register_post_type( 'reviews', [
+        'labels' => [
+            'name'          => 'Отзывы',
+            'singular_name' => 'Отзыв',
+            'add_new'       => __( 'Добавить новый отзыв', 'bluerex' ),
+            'add_new_item'  => __( 'Новый отзыв', 'bluerex' ),
+            'edit_item'     => __( 'Редактировать', 'bluerex' ),
+            'new_item'      => __( 'Новый отзыв', 'bluerex' ),
+            'view_item'     => __( 'Посмотреть', 'bluerex' ),
+            'menu_name'     => 'Отзывы клиентов',
+            'all_items'     => 'Все отзывы',
+        ],
+        'public'       => true,
+        'supports'     => ['title', 'editor', 'thumbnail'],
+        'menu_icon'    => 'dashicons-universal-access',
+        'show_in_rest' => true
+    ] );
+}
+
+
+
 // Custom code
+
 function bluerex_dd($data) {
     echo '<pre style="font-size: 16px; ">' . print_r($data, true) . '</pre>';
     die;
@@ -252,4 +277,10 @@ function bluerex_get_youtube_url( $url ) {
     }
     
     return $embed_url;
+}
+
+function bluerex_get_post_thumbnail( $postID ) {
+    if ( has_post_thumbnail( $postID ) ) {
+        return get_the_post_thumbnail( $postID );
+    }
 }

@@ -196,7 +196,6 @@ if ($design_cat):
                     $post_data = [];
                     foreach ($posts as $post):
                         setup_postdata($post);
-                        // bluerex_dd($post);
                         $data[$i]['post_name'] = $post->post_name;
                         $data[$i]['content'] = get_the_content();
                 ?>
@@ -233,97 +232,65 @@ if ($design_cat):
       </div>
     </div>
 </section>
-<?php endif; unset($category) ?>
+<?php endif; unset($category, $posts) ?>
 
+<?php
+    $posts = get_posts(['post_type' => 'reviews']);
+    if ($posts):
+?>
+    <section class="section-reviews">
+        <div id="carouselReviews" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <?php for ($i = 0; $i < count($posts); $i++): ?>
+                    <li 
+                        data-bs-target="#carouselReviews" 
+                        data-bs-slide-to="<?= $i ?>" 
+                        <?php if (!$i) echo 'class="active"' ?>
+                    ></li>
+                <?php endfor ?>
+            </ol>
+            <div class="carousel-inner">
+                <?php
+                    $isActive = true;
+                    foreach ($posts as $post):
+                ?>
+                    <div class="carousel-item<?php if ($isActive) { echo ' active'; $isActive = false; } ?>">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-sm-7">
+                            <div class="carousel-caption">
+                              <h3><?= $post->post_title ?></h3>
+                              <h4><?= bluerex_get_field( 'review_header', $post->ID ) ?></h4>
+                              <figure>
+                                <blockquote class="blockquote">
+                                  <p><?= $post->post_content ?></p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                    <?= bluerex_get_field( 'review_author', $post->ID ) ?>
+                                </figcaption>
+                              </figure>
+                            </div>      
+                          </div>
+                          <div class="col-sm-5 d-none d-sm-block">
+                            <?= bluerex_get_post_thumbnail( $post->ID ) ?>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+              <a class="carousel-control-prev" href="#carouselReviews" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselReviews" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+        </div>
+    </section>
+<?php endif; unset($posts) ?>
 
-<section class="section-reviews">
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-7">
-            <div class="carousel-caption">
-              <h3>Our Happy Client</h3>
-              <h4>Testimonials</h4>
-              <figure>
-                <blockquote class="blockquote">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                  Mr. John Doe
-                </figcaption>
-              </figure>
-            </div>      
-          </div>
-          <div class="col-sm-5 d-none d-sm-block">
-            <img src="<?php bloginfo('template_url') ?>/assets/img/client.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-7">
-            <div class="carousel-caption">
-              <h3>Our Happy Client</h3>
-              <h4>Testimonials</h4>
-              <figure>
-                <blockquote class="blockquote">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                  Ms. Sarah Conor
-                </figcaption>
-              </figure>
-            </div>      
-          </div>
-          <div class="col-sm-5 d-none d-sm-block">
-            <img src="<?php bloginfo('template_url') ?>/assets/img/client.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-7">
-            <div class="carousel-caption">
-              <h3>Our Happy Client</h3>
-              <h4>Testimonials</h4>
-              <figure>
-                <blockquote class="blockquote">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                  Mr. Bill Gates
-                </figcaption>
-              </figure>
-            </div>      
-          </div>
-          <div class="col-sm-5 d-none d-sm-block">
-            <img src="<?php bloginfo('template_url') ?>/assets/img/client.png" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </a>
-</div>
-</section>
 
 <section class="section-form text-center">
 <div class="container">
