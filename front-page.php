@@ -292,27 +292,19 @@ if ($design_cat):
 <?php endif; unset($posts) ?>
 
 
+<?php
+    $contact = get_page_by_title('Contact');
+    if ($contact):
+?>
 <section class="section-form text-center">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h4>Need Help?</h4>
-      <h5>Don't Forget to Contact With Us?</h5>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem labore tenetur officiis fugit magnam possimus quam praesentium culpa. Aut non saepe quod modi excepturi. Explicabo vitae dolore voluptatibus ipsum mollitia.</p>
-      <form action="" class="row g-3 text-left">
-        <div class="col-md-5">
-          <input type="text" class="form-control" placeholder="Name">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <?= do_shortcode($contact->post_content) ?>
+            </div>
         </div>
-        <div class="col-md-5">
-          <input type="email" class="form-control" placeholder="Email">
-        </div>
-        <div class="col-md-2">
-          <button type="submit" class="btn btn-violet btn-shadow">Submit</button>
-        </div>
-      </form>
     </div>
-  </div>
-</div>
 </section>
+<?php endif ?>
 
 <?php get_footer() ?>
