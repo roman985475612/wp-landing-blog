@@ -27,6 +27,13 @@
     text-decoration: underline;
 }
 
+.footer .gallery {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+}
+
 .footer .footer-images img {
     margin-bottom: 20px;
     border-radius: 15px;

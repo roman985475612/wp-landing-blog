@@ -122,13 +122,25 @@ add_action( 'after_setup_theme', 'bluerex_content_width', 0 );
 function bluerex_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'bluerex' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Footer Left', 'bluerex' ),
+			'id'            => 'sidebar-footer1',
 			'description'   => esc_html__( 'Add widgets here.', 'bluerex' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'before_widget' => '<div id="%1$s" class="col-md-6 widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5 class="widget-title">',
+			'after_title'   => '</h5>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Right', 'bluerex' ),
+			'id'            => 'sidebar-footer2',
+			'description'   => esc_html__( 'Add widgets here.', 'bluerex' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h5 class="widget-title">',
+			'after_title'   => '</h5>',
 		)
 	);
 }

@@ -38,6 +38,10 @@
     text-decoration: none;
 }
 
+.navbar-dark .navbar-nav a {
+    color: rgba(255, 255, 255, .5)
+}
+
 .main-header-text {
 	position: absolute;
 	top: 25%;

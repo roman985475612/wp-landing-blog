@@ -19,8 +19,8 @@
 
   <button id="scrollToTop" class="scroll-to-top"><i class="fas fa-angle-up"></i></button>
 
-  <header class="main-header" <?= bluerex_get_background('header_bg') ?>>
-    <nav class="navbar navbar-expand-lg">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="<?= home_url() ?>">
             <?php $custom_logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) ); ?>
@@ -44,50 +44,4 @@
         </div>
       </div>
     </nav>
-
-    <div class="main-header-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <?php
-                bluerex_show_field('h3', 'header1');
-                bluerex_show_field('h4', 'header2');
-                bluerex_show_field('p', 'header_text');
-            ?>
-            <div class="main-header-buttons">
-                <?php
-                    $link = get_field( 'header_btn_1' );
-                    if ( $link ) :
-                        $link_url = $link['url'];
-                        $link_title = $link['title'];
-                        $link_target = $link['target'] ? $link['target'] : '_self';
-                    ?>
-                    <a 
-                        class="btn btn-pink rounded-pill" 
-                        href="<?= esc_url( $link_url ); ?>" 
-                        target="<?= esc_attr( $link_target ); ?>"
-                    >
-                        <?= esc_html( $link_title ); ?>
-                    </a>
-                <?php endif; ?>
-                <?php
-                    $link = get_field( 'header_btn_2' );
-                    if ( $link ) :
-                        $link_url = $link['url'];
-                        $link_title = $link['title'];
-                        $link_target = $link['target'] ? $link['target'] : '_self';
-                    ?>
-                    <a 
-                        class="btn btn-violet rounded-pill" 
-                        href="<?= esc_url( $link_url ); ?>" 
-                        target="<?= esc_attr( $link_target ); ?>"
-                    >
-                        <?= esc_html( $link_title ); ?>
-                    </a>
-                <?php endif; ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </header>
