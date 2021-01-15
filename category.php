@@ -21,41 +21,20 @@
                     </div>
                 </article>
             <?php endwhile ?>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                          <span aria-hidden="true">&laquo;</span>
-                        </a>
-                      </li>
-                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li>
-                    </ul>
-                </nav>
+                
+                    <?php the_posts_pagination([
+                        'end_size' => 1,
+                        'mid_size' => 1,
+                        'type'     => 'list'
+                    ]) ?>
+                
             <?php else: ?>
                 <p>Posts Not Found</p>
             <?php endif ?>
         </div>
-        <div class="col-md-4">
-          <div class="sidebar-widget">
-            <h2 class="widget-title">Categories</h2>
-            <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                Cras justo odio
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-              <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-              <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-              <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
-            </div>
-          </div>
-        </div>
+
+        <?php get_sidebar() ?>
+
       </div>
     </div>
   </main>

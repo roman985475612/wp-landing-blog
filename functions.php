@@ -143,6 +143,18 @@ function bluerex_widgets_init() {
 			'after_title'   => '</h5>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Category Right', 'bluerex' ),
+			'id'            => 'sidebar-category',
+			'description'   => esc_html__( 'Add widgets here.', 'bluerex' ),
+			'before_widget' => '<div id="%1$s" class="sidebar-widget widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'bluerex_widgets_init' );
 
@@ -236,7 +248,22 @@ function bluerex_reviews() {
     ] );
 }
 
+add_filter( 'pre_get_posts', 'bluerex_exclude_category' );
+function bluerex_exclude_category( $query ) {
+    if ( $query->is_home ) {
+        $query->set( 'category__not_in', [7, 8, 10, 11] );
+    }
+    return $query;
+}
 
+add_filter( 'navigation_markup_template', 'my_navigation_template', 10, 2 );
+function my_navigation_template( $template, $class ) {
+    return '
+    <nav class="navigation %1$s" role="navigation" aria-label="Page navigation example">
+        %3$s
+    </nav>
+    ';
+}
 
 // Custom code
 
